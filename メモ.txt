@@ -1,0 +1,41 @@
+node v : 18.16.1
+nvm use 18.16.1
+
+react : 
+
+npm start
+
+!!!!!
+cd .\MyApp-Frontend\myapp\
+!!!!!
+
+
+・src
+    ・components
+    ・pages
+        ・ChoiceHelper.jsx
+        ・ChoiceHelperResult.jsx
+        ・CourseDeletion.jsx
+        ・CourseManagement.jsx
+        ・CourseRegistration.jsx
+        ・EventManagement.jsx
+        ・EventRegistration.jsx
+        ・main.jsx
+        ・MarkingDeletion.jsx
+        ・MarkingManagement.jsx
+        ・MarkingRegistration.jsx
+        ・ScheduleManagement.jsx
+        ・StudyManagement.jsx
+        ・SubjectManagement.jsx
+        ・SubjectRegistration.jsx
+        ・TestDeletion.jsx
+        ・TestManagement.jsx
+        ・TestRegistration.jsx
+    ・App.css
+    ・App.js
+    ・App.test.js
+    ・index.css
+    ・index.js
+    ・logo.svg
+    ・reportWebVitals.js
+    ・setupTests.js

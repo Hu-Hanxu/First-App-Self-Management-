@@ -1,0 +1,6 @@
+.button-container {
+  display: flex;
+  justify-content: center; /* 水平居中对齐按钮 */
+  vertical-align: middle; /* 垂直居中对齐按钮 */
+  margin-bottom: 20px; /* 调整按钮容器的下边距 */
+}
