@@ -1,7 +1,10 @@
-.container {
+
+.area {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;  /* 100% of viewport height */
+  margin: 144px 256px;
+  background-color: #D7F7F5 50%;
+  border-radius: 25px;
 };
