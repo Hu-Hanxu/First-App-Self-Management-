@@ -44,16 +44,15 @@
   height: 100%;
   background-color: #FFFFFF;
   border-radius: 25px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
 }
 .img{
-  margin: 20px 20px;
+  margin: 40px auto 10px auto;
   width: 150px;
   height: 150px;
-  border-radius: 25px;
 }
 .text {
-  margin: 20px 20px 0px 20px;
+  margin: 0px 20px 0px 20px;
   font-size: 24px;
   font-weight: bold;
   letter-spacing: 3px;
