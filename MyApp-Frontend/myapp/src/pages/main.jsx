@@ -1,50 +1,44 @@
 import React from 'react';
-import '../App.css';
 import '../styles/main.css';
-import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
 
-const MainPage = () => {
+
+const Main = () => {
+  const navigate = useNavigate();
+
   const handleStudyManagement = () => {
-    // 学習管理画面に飛ぶ
+    navigate('/study');
   };
 
   const handleScheduleManagement = () => {
-    // 日程管理画面に飛ぶ
+    navigate('/schedule');
   };
 
   const handleChoiceHelper = () => {
-    // 選択ヘルパー画面に飛ぶ
+    navigate('/choice');
   };
 
   return (
-    <div className='container'>
-      <h1 style={styles.title}>Name Name</h1>
-      <div className="button-container">
-        <Button variant='contained' style={styles.Button} onClick={handleStudyManagement}>学習管理</Button>
-      </div>
-      <div className="button-container">
-        <Button variant='contained' style={styles.Button} onClick={handleScheduleManagement}>日程管理</Button>
-      </div>
-      <div className="button-container">
-        <Button variant='contained' style={styles.Button} onClick={handleChoiceHelper}>選択ヘルパー</Button>
+    <div className='area'>
+      <h1 className='title'>自己管理システム</h1>
+      <div className='card-area'>
+        <div className='card' onClick={handleStudyManagement}>
+          <img className='img' src="/images/lesson.png" alt='学習管理'/>
+          <p className='text'>学習管理</p>
+          <div className='border-top'/>
+        </div>
+        <div className='card' onClick={handleScheduleManagement}>
+          <img className='img' src="/images/schedule.png" alt='日程管理'/>
+          <p className='text'>日程管理</p>
+          <div className='border-top'onClick={handleChoiceHelper}/>
+        </div>
+        <div className='card'>
+          <img className='img' src="/images/choice.png" alt='選択ヘルパー'/>
+          <p className='text'>選択ヘルパー</p>
+          <div className='border-top'/>
+        </div>
       </div>
     </div>
   );
-}
-
-const styles = {
-  title: {
-    fontSize: '50px',
-    color: '#64affa',
-    textAlign: 'center',
-    margin: '50px'
-  },
-  Button: {
-    margin: '20px',
-    width: '300px',
-    height: '80px',
-    fontSize: '20px',
-    backgroundColor: '#64affa'
-  },
 };
-export default MainPage;
+export default Main;
