@@ -1,16 +1,16 @@
 import requests
 
 # 请求的 URL
-url = 'http://localhost:5000/api/courses'
+url = 'http://localhost:5000/api/tests'
 
 # 请求头中的 Content-Type
 headers = {'Content-Type': 'application/json'}
 
 # 请求体中的 JSON 数据
 data = {
-    'name': '计算机科学',
-    'time': '周一 10:00-12:00',
-    'location': ''
+    'time': '1',
+    'name': '1',
+    'location': '1'
 }
 
 # 发送 POST 请求
