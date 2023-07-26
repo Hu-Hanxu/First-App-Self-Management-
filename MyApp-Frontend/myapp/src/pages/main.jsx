@@ -30,9 +30,9 @@ const Main = () => {
         <div className='card' onClick={handleScheduleManagement}>
           <img className='img' src="/images/schedule.png" alt='日程管理'/>
           <p className='text'>日程管理</p>
-          <div className='border-top'onClick={handleChoiceHelper}/>
+          <div className='border-top'/>
         </div>
-        <div className='card'>
+        <div className='card' onClick={handleChoiceHelper}>
           <img className='img' src="/images/choice.png" alt='選択ヘルパー'/>
           <p className='text'>選択ヘルパー</p>
           <div className='border-top'/>
