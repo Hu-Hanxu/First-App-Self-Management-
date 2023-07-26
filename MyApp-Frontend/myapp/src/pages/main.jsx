@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/main.css';
+import '../styles/font.css'
 import { useNavigate } from 'react-router-dom';
 
 

@@ -1,0 +1,60 @@
+.table-container {
+  width: 600px;
+  height: auto;
+  max-height: 400px;
+  overflow-y: auto;
+  box-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.25);
+  background-color: #ffffff;
+}
+
+.subject-table {
+  position: relative;
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  box-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.25);
+}
+
+.subject-table td {
+  border: 2px solid #b6b6b6;
+  padding: 8px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.subject-table th {
+  padding: 8px;
+  position: sticky;
+  top: 0;
+  border: 2px solid #b6b6b6;
+  background-color: #f2f2f2;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+}
+
+.subject-table input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 2px 0;
+}
+input:focus {
+  outline: none;
+  border: 1.5px solid #458ad0; /* 可以根据需要修改颜色和样式 */
+}
+
+.subject-table button {
+  background-color: #ffa8a2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 12px;
+}
+
+.subject-table button:hover {
+  background-color: #ff8989;
+}

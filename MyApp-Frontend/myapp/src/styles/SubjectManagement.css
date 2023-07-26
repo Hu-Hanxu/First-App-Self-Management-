@@ -1,0 +1,37 @@
+#SubjectManagement
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.area {
+  height: 736px;
+  width: 927px;
+  margin: 200px 256px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 20px;
+  background-color: rgba(215, 247, 245, 0.25);
+  border-radius: 25px;
+  border: 5px solid #3C3C3C;
+  position: relative;
+}
+.title {
+  margin-bottom: 30px;
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.list-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mb {
+  margin-bottom: 50px;
+}
