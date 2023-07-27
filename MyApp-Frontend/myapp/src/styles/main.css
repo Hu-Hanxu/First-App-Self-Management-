@@ -94,3 +94,73 @@
   border-top: 3px solid #64AFFA;
   margin-bottom: 60px;
 }
+
+
+/* ChoiceHelper */
+.choice-helper-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.input-container {
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 400px;
+  font-size: 14;
+  margin: 30px 0;
+}
+
+.button-container {
+  margin-bottom: 10px;
+}
+
+.choice-button {
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #FFFFFF;
+  border: 2px solid #458ad0;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 50px;
+  color: #737373;
+  padding: 0;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+}
+.choice-button:hover{
+  transform: scale(1.1);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.result-container h3 {
+  margin-bottom: 20px;
+}
+.hint {
+  font-size: 14px;
+  color: #545454;
+}
+.selectedChoice {
+  background-color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 2px solid #64AFFA;
+  font-size: 18px;
+  font-weight: bold;
+}

@@ -9,6 +9,7 @@ import SubjectManagement from './pages/SubjectManagement';
 import TestManagement from './pages/TestManagement';
 import MarkingManagement from './pages/MarkingManagement';
 import EventManagement from './pages/EventManagement';
+import ChoiceHelper from './pages/ChoiceHelper';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/test" element={<TestManagement />} />
           <Route path="/mark" element={<MarkingManagement />} />
           <Route path="/event" element={<EventManagement />} />
+          <Route path="/choice" element={<ChoiceHelper />} />
           <Route path="*" element={<h1>Not Found</h1>} />
           {/* <Route path="/choice" element={<ChoiceHelper />} /> */}
         </Routes>
