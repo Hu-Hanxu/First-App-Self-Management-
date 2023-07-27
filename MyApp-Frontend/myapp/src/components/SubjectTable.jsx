@@ -17,7 +17,7 @@ const SubjectTable = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await Axios.get('http://172.25.3.19:5000//api/subjects');
+        const response = await Axios.get('http://172.25.3.49:5000//api/subjects');
         if (response.status === 200) {
           const data = response.data;
           if (Array.isArray(data.subjects)) {
@@ -50,7 +50,7 @@ const SubjectTable = () => {
     } else {
       const newRow = { name: newName, deadline: newDeadline }; // Use the new values here
       try {
-        const response = await Axios.post('http://172.25.3.19:5000//api/subjects', newRow, {
+        const response = await Axios.post('http://172.25.3.49:5000//api/subjects', newRow, {
           headers: {
             'Content-Type': 'application/json',
           },
@@ -96,7 +96,7 @@ const SubjectTable = () => {
     }
   
     try {
-      const response = await Axios.delete(`http://172.25.3.19:5000//api/subjects/${subjectId}`);
+      const response = await Axios.delete(`http://172.25.3.49:5000//api/subjects/${subjectId}`);
       if (response.status === 200) {
         console.log(`数据已从后端删除！课程ID：${subjectId}`);
         setDataUpdateTrigger((prevTrigger) => prevTrigger + 1); // 触发数据更新

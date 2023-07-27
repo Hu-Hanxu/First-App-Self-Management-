@@ -1,7 +1,6 @@
 .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
 }
 .area {
@@ -10,7 +9,6 @@
     margin: 200px 256px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     margin: auto;
     margin-top: 20px;
@@ -25,4 +23,135 @@
     font-weight: bold;
     letter-spacing: 5px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* MarkingTable.css */
+/* EventTable.css */
+.target-input,
+.event-input {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.target-input input,
+.event-input input {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+.target-table,
+.event-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.target-table th,
+.event-table th {
+    padding: 8px;
+    position: sticky;
+    top: 0;
+    border: 2px solid #b6b6b6;
+    background-color: #f2f2f2;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+}
+.target-table td,
+.event-table td {
+    border: 2px solid #b6b6b6;
+    padding: 8px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.target-table th {
+  background-color: #f2f2f2;
+}
+
+.target-table button,
+.event-table button {
+  padding: 8px;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.action-button-container { 
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  margin:  0 0 -30px 0;
+  flex-direction: row;
+  position: absolute;
+  bottom: 0%;
+}
+
+.action-button-container-event { 
+  display: flex;
+  justify-content: center;
+  width: 600px;
+  margin:  0 0 -30px 0;
+  flex-direction: row;
+  position: absolute;
+  bottom: 0%;
+}
+
+.mark-action-button-container { 
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  margin:  0 0 -60px 0;
+  flex-direction: row;
+  position: absolute;
+  bottom: 0%;
+}
+
+.marking-button,
+.event-button,
+.action-button {
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #FFFFFF;
+    border: 2px solid #458ad0;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+    line-height: 50px;
+    color: #737373;
+    padding: 0;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.marking-button:hover,
+.event-button:hover,
+.action-button:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.management-container {
+    width: 600px;
+    height: auto;
+    max-height: 400px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+}
+
+.mark-area,
+.event-area {
+    height: auto;
+    max-height: 700px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }

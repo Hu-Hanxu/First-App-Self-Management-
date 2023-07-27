@@ -1,0 +1,121 @@
+/* Calendar.css */
+.calendar-container {
+  width: 550px;
+  height: 400px;
+  margin: 0px auto 30px auto;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 20px 30px 10px 30px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+}
+
+.calendar-title {
+  margin: 10px auto 10px auto;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.calendar-weekday {
+  text-transform: uppercase;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px 30px;
+}
+
+.calendar-day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  font-size: 12px;
+  border-radius: 10px;
+  background-color: #fafafa;
+  letter-spacing: 1.5px;
+}
+
+.calendar-day.outside-month {
+  background-color: #fff;
+  pointer-events: none; /* 阻止点击事件 */
+  border: none;
+  color: #ccc;
+}
+
+.calendar-day:hover {
+  border: 2px solid #458ad0;
+  transition: transform 0.2s;
+}
+
+.calendar-day.disabled {
+  color: #ccc;
+  cursor: default;
+}
+
+.calendar-day.today {
+  background-color: #d8d8d8;
+}
+
+.calendar-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 550px;
+  margin: 20px auto;
+  margin-top: 30px;
+  flex-direction: row;
+  position: absolute;
+  bottom: 5%;
+}
+
+.calendar-button {
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #ffffff;
+  border: 2px solid #458ad0;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 50px;
+  color: #737373;
+  padding: 0 20px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+}
+
+.calendar-button:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.calendar-day.completed {
+/* 完成打卡 */
+  background-image: url('../../public/images/star.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.calendar-day.overlap:hover {
+/* 完成事件 */
+    cursor: pointer;
+    border: 2px solid red;
+}
+.calendar-day.overlap {
+/* 完成事件 */
+    cursor: pointer;
+    border: 2px solid rgb(255, 171, 171);
+    background-color: #fafafa;
+}
