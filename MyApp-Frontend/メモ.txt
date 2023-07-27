@@ -2,6 +2,8 @@ node v : 18.16.1
 nvm use 18.16.1
 
 react : 
+node.js のインストール
+npm install
 
 npm start
 

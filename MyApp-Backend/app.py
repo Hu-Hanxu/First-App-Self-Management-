@@ -491,43 +491,45 @@ scheduler.start()
 
 @app.route('/api/markings', methods=['POST'])
 def add_or_update_marking():
-    marking_data = request.get_json()
-
-    if not isinstance(marking_data, dict):
-        return jsonify({'error': '请求数据必须是一个JSON对象（字典类型）。'}), 400
-
-    target = marking_data.get('target')  # 从JSON数据中获取目标（target）
-    check = marking_data.get('marking_check')  # 从JSON数据中获取check值
-
-    if not target:
-        return jsonify({'error': 'Targetが提供されていません。'}), 400
-
+    marking_data = request.get_json()  # 从请求中获取JSON数据，此时接收到的是一个JSON对象
     con, cur = connect_to_database()  # 连接到数据库
 
     if con and cur:
         try:
-            # 保持原有的数据库操作代码不变
-            cur.execute("SELECT MAX(id) FROM markings")
-            max_id = cur.fetchone()[0]
-            if max_id is None:
-                max_id = 0
+            for data in marking_data:
+                marking_id = data.get('id')  # 从JSON数据中获取id字段，用于判断是否存在对应的数据条目
+                target = data.get('target')  # 从JSON数据中获取目标（target）
+                check = data.get('marking_check')  # 从JSON数据中获取marking_check值
 
-            new_marking_id = max_id + 1
+                if not target:
+                    return jsonify({'error': 'Targetが提供されていません。'}), 400  # 如果目标为空，返回错误响应
 
-            cur.execute("INSERT INTO markings (id, target, marking_check) VALUES (%s, %s, %s)", (new_marking_id, target, check))
+                if marking_id:
+                    # 执行更新操作
+                    cur.execute("UPDATE markings SET target = %s, marking_check = %s WHERE id = %s", (target, check, marking_id))
+                else:
+                    # 执行插入操作
+                    cur.execute("SELECT MAX(id) FROM markings")  # 获取数据库中最大的marking ID
+                    max_id = cur.fetchone()[0]
+                    if max_id is None:
+                        max_id = 0
 
-            con.commit()
-            return jsonify({'message': '打刻目標登録/更新成功！'}), 200
+                    new_marking_id = max_id + 1  # 生成新的marking ID
+
+                    # 执行数据库操作，插入新的marking记录并使用新生成的marking ID和check值
+                    cur.execute("INSERT INTO markings (id, target, marking_check) VALUES (%s, %s, %s)", (new_marking_id, target, check))
+
+            con.commit()  # 提交事务
+            return jsonify({'message': '打刻目標登録成功！'}), 200  # 返回成功响应
         except pg.Error as e:
             print(f"データベース操作失败：{e}")
-            con.rollback()
-            return jsonify({'error': 'データベースエラーが発生しました。もう一度やり直してください。'}), 500
+            con.rollback()  # 回滚事务
+            return jsonify({'error': 'データベースエラーが発生しました。もう一度やり直してください。'}), 500  # 返回数据库错误响应
         finally:
-            cur.close()
-            con.close()
+            cur.close()  # 关闭游标
+            con.close()  # 关闭数据库连接
     else:
-        return jsonify({'error': 'データベースに接続できませんでした。'}), 500
-
+        return jsonify({'error': 'データベースに接続できませんでした。'}), 500  # 返回数据库连接错误响应
 
 
 @app.route('/api/markings/<int:marking_id>', methods=['DELETE'])
