@@ -27,31 +27,33 @@ const MarkingTable = () => {
   }, []); // 注意，这里的空数组作为第二个参数，表示只在组件加载时执行一次
 
   // 处理添加新的打刻目标
-  const handleAddTarget = () => {
-    const newTargetData = {
-      target: newTarget,
-      marking_check: false
-    };
-
-    axios
-      .post('http://192.168.3.10:5000/api/markings', newTargetData, {
-        headers: {
-          'Content-Type': 'application/json', // 设置请求头为 JSON 格式
-        },
-      })
-      .then((response) => {
-        console.log(response.data); // 可以根据需要进行进一步处理
-        setMarkingTargets((prevTargets) => [
-          ...prevTargets,
-          { id: response.data.marking_id, target: newTarget, marking_check: false },
-        ]);
-        setNewTarget('');
-      })
-      .catch((error) => {
-        console.error(error);
-        // 显示错误消息或其他错误处理逻辑
-      });
+// 修改 handleAddTarget 函数
+const handleAddTarget = () => {
+  const newTargetData = {
+    target: newTarget,
+    marking_check: false // 根据需求，这里可以设置为默认值
   };
+
+  axios
+    .post('http://192.168.3.10:5000/api/markings', [newTargetData], {
+      headers: {
+        'Content-Type': 'application/json', // 设置请求头为 JSON 格式
+      },
+    })
+    .then((response) => {
+      console.log(response.data); // 可以根据需要进行进一步处理
+      setMarkingTargets((prevTargets) => [
+        ...prevTargets,
+        { id: response.data.marking_id, target: newTarget, marking_check: false },
+      ]);
+      setNewTarget('');
+    })
+    .catch((error) => {
+      console.error(error);
+      // 显示错误消息或其他错误处理逻辑
+    });
+};
+
 
   // 处理打刻按钮点击事件
   const handleMarking = () => {

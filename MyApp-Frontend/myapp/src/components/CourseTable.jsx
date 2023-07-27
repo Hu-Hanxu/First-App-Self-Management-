@@ -59,15 +59,15 @@ const CourseTable = () => {
         });
         if (response.status === 200) {
           const data = response.data;
-          console.log('数据已保存到后端！课程ID：', data.course_id);
+          console.log('コース情報が保存されました！ID：', data.course_id);
           const updatedRows = [...rows];
           updatedRows[updatedRows.length - 1].course_id = data.course_id;
           setRows(updatedRows);
         } else {
-          setError('保存数据到后端时出现问题！');
+          setError('入力した内容に格式エラーがあります。もう一度やり直してください。');
         }
       } catch (error) {
-        setError('连接后端时出现错误：' + error.message);
+        setError('入力した内容に格式エラーがあります。もう一度やり直してください。');
       }
       setShowActions(false);
       setShowInputRow(false);
