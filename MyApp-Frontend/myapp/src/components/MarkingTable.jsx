@@ -15,7 +15,7 @@ const MarkingTable = () => {
   // 使用 useEffect 发起 GET 请求来获取打刻目标的列表数据
   useEffect(() => {
     axios
-      .get('http://172.25.3.49:5000/api/markings')
+      .get('http://192.168.3.10:5000/api/markings')
       .then((response) => {
         // 成功获取数据，更新状态中的打刻目标列表
         setMarkingTargets(response.data);
@@ -27,31 +27,33 @@ const MarkingTable = () => {
   }, []); // 注意，这里的空数组作为第二个参数，表示只在组件加载时执行一次
 
   // 处理添加新的打刻目标
-  const handleAddTarget = () => {
-    const newTargetData = {
-      target: newTarget,
-      marking_check: false
-    };
-
-    axios
-      .post('http://172.25.3.49:5000/api/markings', newTargetData, {
-        headers: {
-          'Content-Type': 'application/json', // 设置请求头为 JSON 格式
-        },
-      })
-      .then((response) => {
-        console.log(response.data); // 可以根据需要进行进一步处理
-        setMarkingTargets((prevTargets) => [
-          ...prevTargets,
-          { id: response.data.marking_id, target: newTarget, marking_check: false },
-        ]);
-        setNewTarget('');
-      })
-      .catch((error) => {
-        console.error(error);
-        // 显示错误消息或其他错误处理逻辑
-      });
+// 修改 handleAddTarget 函数
+const handleAddTarget = () => {
+  const newTargetData = {
+    target: newTarget,
+    marking_check: false // 根据需求，这里可以设置为默认值
   };
+
+  axios
+    .post('http://192.168.3.10:5000/api/markings', [newTargetData], {
+      headers: {
+        'Content-Type': 'application/json', // 设置请求头为 JSON 格式
+      },
+    })
+    .then((response) => {
+      console.log(response.data); // 可以根据需要进行进一步处理
+      setMarkingTargets((prevTargets) => [
+        ...prevTargets,
+        { id: response.data.marking_id, target: newTarget, marking_check: false },
+      ]);
+      setNewTarget('');
+    })
+    .catch((error) => {
+      console.error(error);
+      // 显示错误消息或其他错误处理逻辑
+    });
+};
+
 
   // 处理打刻按钮点击事件
   const handleMarking = () => {
@@ -64,7 +66,7 @@ const MarkingTable = () => {
   
     // 发送POST请求向后端更新数据
     axios
-      .post('http://172.25.3.49:5000/api/markings', dataToSend, {
+      .post('http://192.168.3.10:5000/api/markings', dataToSend, {
         headers: {
           'Content-Type': 'application/json', // 设置请求头为 JSON 格式
         },
@@ -77,7 +79,6 @@ const MarkingTable = () => {
         // 显示错误消息或其他错误处理逻辑
       });
   };
-  
 
   // 处理切换打刻目标的选择状态
   const handleToggleCheck = (index) => {
@@ -92,7 +93,7 @@ const MarkingTable = () => {
     const markingIdToDelete = markingTargets[index].id;
 
     axios
-      .delete(`http://172.25.3.49:5000/api/markings/${markingIdToDelete}`)
+      .delete(`http://192.168.3.10:5000/api/markings/${markingIdToDelete}`)
       .then((response) => {
         console.log(response.data); // 可以根据需要进行进一步处理
         setMarkingTargets((prevTargets) => prevTargets.filter((target, i) => i !== index));
@@ -117,7 +118,7 @@ const MarkingTable = () => {
             onChange={(e) => setNewTarget(e.target.value)}
             placeholder="目標を入力してください"
           />
-          <button onClick={handleAddTarget}>打刻登録</button>
+          <button onClick={handleAddTarget} className='button-register'>打刻登録</button>
         </div>
         <div className="management-container">
         <table className="target-table">

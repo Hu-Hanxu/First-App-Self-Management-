@@ -17,7 +17,7 @@ const CourseTable = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await Axios.get('http://172.25.3.49:5000//api/courses');
+        const response = await Axios.get('http://192.168.3.10:5000//api/courses');
         if (response.status === 200) {
           const data = response.data;
           if (Array.isArray(data.courses)) {
@@ -52,22 +52,22 @@ const CourseTable = () => {
     } else {
       const newRow = { time: newTime, name: newName, location: newLocation }; // Use the new values here
       try {
-        const response = await Axios.post('http://172.25.3.49:5000//api/courses', newRow, {
+        const response = await Axios.post('http://192.168.3.10:5000//api/courses', newRow, {
           headers: {
             'Content-Type': 'application/json',
           },
         });
         if (response.status === 200) {
           const data = response.data;
-          console.log('数据已保存到后端！课程ID：', data.course_id);
+          console.log('コース情報が保存されました！ID：', data.course_id);
           const updatedRows = [...rows];
           updatedRows[updatedRows.length - 1].course_id = data.course_id;
           setRows(updatedRows);
         } else {
-          setError('保存数据到后端时出现问题！');
+          setError('入力した内容に格式エラーがあります。もう一度やり直してください。');
         }
       } catch (error) {
-        setError('连接后端时出现错误：' + error.message);
+        setError('入力した内容に格式エラーがあります。もう一度やり直してください。');
       }
       setShowActions(false);
       setShowInputRow(false);
@@ -102,7 +102,7 @@ const CourseTable = () => {
     }
   
     try {
-      const response = await Axios.delete(`http://172.25.3.49:5000//api/courses/${courseId}`);
+      const response = await Axios.delete(`http://192.168.3.10:5000//api/courses/${courseId}`);
       if (response.status === 200) {
         console.log(`数据已从后端删除！课程ID：${courseId}`);
         setDataUpdateTrigger((prevTrigger) => prevTrigger + 1); // 触发数据更新

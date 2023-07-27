@@ -42,3 +42,31 @@ https://github.com/Hu-Hanxu/git-sample
     ・logo.svg
     ・reportWebVitals.js
     ・setupTests.js
+
+      const handleAddTarget = () => {
+    const newTargetData = {
+      target: newTarget,
+      marking_check: false
+    };
+
+    console.log(newTargetData);
+    
+    axios
+      .post('http://192.168.3.10:5000/api/markings', newTargetData, {
+        headers: {
+          'Content-Type': 'application/json', // 设置请求头为 JSON 格式
+        },
+      })
+      .then((response) => {
+        console.log(response.data); // 可以根据需要进行进一步处理
+        setMarkingTargets((prevTargets) => [
+          ...prevTargets,
+          { id: response.data.marking_id, target: newTarget, marking_check: false },
+        ]);
+        setNewTarget('');
+      })
+      .catch((error) => {
+        console.error(error);
+        // 显示错误消息或其他错误处理逻辑
+      });
+  };
