@@ -1,0 +1,89 @@
+2023-07-27 13:38:35,486 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.25.3.49:5000
+2023-07-27 13:38:35,486 - INFO - [33mPress CTRL+C to quit[0m
+2023-07-27 13:38:51,801 - INFO - 172.25.0.94 - - [27/Jul/2023 13:38:51] "OPTIONS /api/markings HTTP/1.1" 200 -
+2023-07-27 13:38:51,946 - INFO - 172.25.0.94 - - [27/Jul/2023 13:38:51] "POST /api/markings HTTP/1.1" 200 -
+2023-07-27 13:39:04,570 - INFO - 172.25.0.94 - - [27/Jul/2023 13:39:04] "OPTIONS /api/markings HTTP/1.1" 200 -
+2023-07-27 13:39:04,713 - ERROR - Exception on /api/markings [POST]
+Traceback (most recent call last):
+  File "C:\Users\Owner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Owner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Owner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\Owner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Owner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "c:\git-sample-1\MyApp-Backend\app.py", line 441, in add_marking
+    target = marking_data.get('target')  # ò∏JSONêîêòíÜ\u83b7éÊñ⁄\u6807ÅitargetÅj
+AttributeError: 'list' object has no attribute 'get'
+2023-07-27 13:39:04,719 - INFO - 172.25.0.94 - - [27/Jul/2023 13:39:04] "[35m[1mPOST /api/markings HTTP/1.1[0m" 500 -
+2023-07-27 13:39:08,638 - ERROR - Exception on /api/markings [POST]
+Traceback (most recent call last):
+  File "C:\Users\Owner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Owner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Owner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\Owner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Owner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "c:\git-sample-1\MyApp-Backend\app.py", line 441, in add_marking
+    target = marking_data.get('target')  # ò∏JSONêîêòíÜ\u83b7éÊñ⁄\u6807ÅitargetÅj
+AttributeError: 'list' object has no attribute 'get'
+2023-07-27 13:39:08,639 - INFO - 172.25.0.94 - - [27/Jul/2023 13:39:08] "[35m[1mPOST /api/markings HTTP/1.1[0m" 500 -
+2023-07-27 13:39:45,006 - INFO - 172.25.0.94 - - [27/Jul/2023 13:39:45] "GET /api/markings HTTP/1.1" 200 -
+2023-07-27 13:39:46,387 - INFO - 172.25.0.94 - - [27/Jul/2023 13:39:46] "GET /api/markings HTTP/1.1" 200 -
+2023-07-27 13:39:48,242 - INFO - 172.25.0.94 - - [27/Jul/2023 13:39:48] "OPTIONS /api/markings HTTP/1.1" 200 -
+2023-07-27 13:39:48,341 - ERROR - Exception on /api/markings [POST]
+Traceback (most recent call last):
+  File "C:\Users\Owner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Owner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Owner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\Owner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Owner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "c:\git-sample-1\MyApp-Backend\app.py", line 441, in add_marking
+    target = marking_data.get('target')  # ò∏JSONêîêòíÜ\u83b7éÊñ⁄\u6807ÅitargetÅj
+AttributeError: 'list' object has no attribute 'get'
+2023-07-27 13:39:48,343 - INFO - 172.25.0.94 - - [27/Jul/2023 13:39:48] "[35m[1mPOST /api/markings HTTP/1.1[0m" 500 -
+2023-07-27 13:39:51,515 - ERROR - Exception on /api/markings [POST]
+Traceback (most recent call last):
+  File "C:\Users\Owner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Owner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Owner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\Owner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Owner\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "c:\git-sample-1\MyApp-Backend\app.py", line 441, in add_marking
+    target = marking_data.get('target')  # ò∏JSONêîêòíÜ\u83b7éÊñ⁄\u6807ÅitargetÅj
+AttributeError: 'list' object has no attribute 'get'
+2023-07-27 13:39:51,516 - INFO - 172.25.0.94 - - [27/Jul/2023 13:39:51] "[35m[1mPOST /api/markings HTTP/1.1[0m" 500 -
+2023-07-27 13:39:55,598 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.25.3.49:5000
+2023-07-27 13:39:55,599 - INFO - [33mPress CTRL+C to quit[0m
+2023-07-27 13:40:06,100 - INFO - 172.25.0.94 - - [27/Jul/2023 13:40:06] "GET /api/markings HTTP/1.1" 200 -
+2023-07-27 13:40:53,562 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-07-27 13:40:53,562 - INFO - [33mPress CTRL+C to quit[0m
+2023-07-27 13:40:53,577 - INFO -  * Restarting with stat
+2023-07-27 13:40:54,465 - WARNING -  * Debugger is active!
+2023-07-27 13:40:54,483 - INFO -  * Debugger PIN: 682-644-523
+2023-07-27 13:41:04,148 - INFO -  * Detected change in 'c:\\git-sample-1\\MyApp-Backend\\app.py', reloading
+2023-07-27 13:41:04,211 - INFO -  * Restarting with stat

@@ -1,20 +1,16 @@
 import requests
 
-# 请求的 URL
-url = 'http://localhost:5000/api/tests'
+# 定义要删除的事件ID
+event_id_to_delete = 1
 
-# 请求头中的 Content-Type
-headers = {'Content-Type': 'application/json'}
+# 请求的URL
+url = f'http://192.168.48.140:5000/api/events/{event_id_to_delete}'
 
-# 请求体中的 JSON 数据
-data = {
-    'time': '1',
-    'name': '1',
-    'location': '1'
-}
+# 发送删除请求
+response = requests.delete(url)
 
-# 发送 POST 请求
-response = requests.post(url, json=data, headers=headers)
-
-# 输出响应结果
-print(response.json())
+# 解析响应
+if response.status_code == 200:
+    print('删除成功！')
+else:
+    print(f'删除失败：{response.json()}')
