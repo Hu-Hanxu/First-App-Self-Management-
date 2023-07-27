@@ -18,7 +18,7 @@ const ScheduleManagement = () => {
     useEffect(() => {
         // Fetch event data and set the state
         axios
-            .get('http://172.25.3.49:5000/api/events')
+            .get('http://192.168.3.10:5000/api/events')
             .then((response) => {
                 setEvents(response.data);
             })

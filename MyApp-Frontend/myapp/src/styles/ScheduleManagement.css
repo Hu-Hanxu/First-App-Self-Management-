@@ -31,13 +31,14 @@
 .event-input {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin: 0 auto;
 }
 
 .target-input input,
 .event-input input {
   padding: 8px;
-  margin-right: 10px;
+  margin: 0px 10px 20px 0;
+  width: 200px;
 }
 
 .target-table,
@@ -111,47 +112,52 @@
 .marking-button,
 .event-button,
 .action-button {
-    width: 200px;
-    height: 50px;
-    border-radius: 25px;
-    background-color: #FFFFFF;
-    border: 2px solid #458ad0;
-    font-size: 18px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-align: center;
-    line-height: 50px;
-    color: #737373;
-    padding: 0;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #FFFFFF;
+  border: 2px solid #458ad0;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 50px;
+  color: #737373;
+  padding: 0;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 .marking-button:hover,
 .event-button:hover,
 .action-button:hover {
-    transform: scale(1.1);
-    transition: transform 0.2s;
-    cursor: pointer;
+  transform: scale(1.1);
+  transition: transform 0.2s;
+  cursor: pointer;
 }
 
 .management-container {
-    width: 600px;
-    height: auto;
-    max-height: 400px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    position: relative;
+  width: 600px;
+  height: auto;
+  max-height: 400px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  position: relative;
 }
 
 .mark-area,
 .event-area {
-    height: auto;
-    max-height: 700px;
-    width: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
+  height: auto;
+  max-height: 700px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-register {
+  height: 35px;
+  margin: 0px 0px 0px 10px;
 }

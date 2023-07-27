@@ -44,6 +44,7 @@ return (
           placeholder='入力したら、下の「RANDOM」ボタンを押してください'
           value={choices}
           onChange={handleInputChange}
+          className='choice-input'
         />
       </div>
       <div className='choice-button' onClick={handleSelectChoice}>RANDOM</div>

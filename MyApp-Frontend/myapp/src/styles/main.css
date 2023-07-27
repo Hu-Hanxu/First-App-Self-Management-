@@ -108,7 +108,7 @@
   margin-bottom: 10px;
 }
 
-input {
+.choice-input {
   padding: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -159,8 +159,8 @@ input {
 .selectedChoice {
   background-color: #FFFFFF;
   padding: 10px 20px;
-  border-radius: 25px;
-  border: 2px solid #64AFFA;
+  border-radius: 10px;
+  border: 2px solid #458ad0;
   font-size: 18px;
   font-weight: bold;
 }

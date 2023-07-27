@@ -20,7 +20,7 @@ const EventTable = () => {
   useEffect(() => {
     // 获取事件列表数据
     axios
-      .get('http://172.25.3.49:5000/api/events')
+      .get('http://192.168.3.10:5000/api/events')
       .then((response) => {
         setEvents(response.data);
       })
@@ -36,7 +36,7 @@ const EventTable = () => {
     };
 
     axios
-      .post('http://172.25.3.49:5000/api/events', newEventData, {
+      .post('http://192.168.3.10:5000/api/events', newEventData, {
         headers: {
           'Content-Type': 'application/json', // 设置请求头为 JSON 格式
         },
@@ -57,7 +57,7 @@ const EventTable = () => {
 
   const handleDeleteEvent = (id) => {
     axios
-      .delete(`http://172.25.3.49:5000/api/events/${id}`)
+      .delete(`http://192.168.3.10:5000/api/events/${id}`)
       .then((response) => {
         console.log(response.data);
         setEvents((prevEvents) => prevEvents.filter((event) => event.id !== id));
@@ -78,7 +78,7 @@ const EventTable = () => {
           type='text'
           value={newEvent}
           onChange={(e) => setNewEvent(e.target.value)}
-          placeholder='事項'
+          placeholder='事項を入力してください'
         />
         <input
           type='date'
@@ -86,7 +86,7 @@ const EventTable = () => {
           onChange={(e) => setNewTime(e.target.value)}
           placeholder='時間'
         />
-        <button onClick={handleAddEvent}>事项登録</button>
+        <button onClick={handleAddEvent} className='button-register'>事项登録</button>
       </div>
       <div className='management-container'>
         <table className='event-table'>

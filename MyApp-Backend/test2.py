@@ -1,6 +1,6 @@
 import requests
 
-url = 'http://172.25.3.49:5000/api/markings'
+url = 'http://192.168.3.10:5000/api/markings'
 data = [
     {'target': 'Target1', 'marking_check': True},
 ]
@@ -12,7 +12,7 @@ print('POST响应内容:', response.text)
 
 # import requests
 
-# url = 'http://172.25.3.49:5000/api/markings'
+# url = 'http://192.168.3.10:5000/api/markings'
 # data = [
 #     {'id': 3, 'target': 'Target3', 'marking_check': True},
 #     {'id': 4, 'target': 'Target4', 'marking_check': False},
