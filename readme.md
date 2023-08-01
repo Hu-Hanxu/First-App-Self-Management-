@@ -25,7 +25,7 @@ pip install flask
 
 `MyApp-Backend`フォルダーにある`app.py`ファイルを開き、
 10-14行を自分のデータベースの情報に変え、
-ターミナルで：` 自分のpythonルート　c:/git-sample-1/MyApp-Backend/app.py `を入力して実行する
+ターミナルで：` & 自分のpythonルート c:/git-sample-1/MyApp-Backend/app.py `を入力して実行する
 
 ===========================================================================
 
