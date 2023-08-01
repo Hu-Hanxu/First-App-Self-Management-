@@ -6,7 +6,7 @@ app = Flask(__name__)
 CORS(app)
 scheduler = BackgroundScheduler()
 
-# 配置信息
+# 自分のデータベースへ接続
 _DATABASE = 'mydatabase'  # 自分のデータベース名に変える
 _USER = 'postgres'     # 自分のユーザー名に変える
 _PASSWORD = '990218'   # 自分のパスワードに変える
