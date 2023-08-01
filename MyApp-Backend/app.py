@@ -432,40 +432,6 @@ def delete_tests():
     else:
         return jsonify({'error': 'データベースへの接続できないよ。'}), 500
     
-# @app.route('/api/markings', methods=['POST'])
-# def add_marking():
-#     marking_data = request.get_json()  # 从请求中获取JSON数据，此时接收到的是一个JSON对象
-#     con, cur = connect_to_database()  # 连接到数据库
-
-#     if con and cur:
-#         try:
-#             target = marking_data.get('target')  # 从JSON数据中获取目标（target）
-#             check = marking_data.get('marking_check')  # 从JSON数据中获取check值
-
-#             if not target:
-#                 return jsonify({'error': 'Targetが提供されていません。'}), 400  # 如果目标为空，返回错误响应
-
-#             cur.execute("SELECT MAX(id) FROM markings")  # 获取数据库中最大的marking ID
-#             max_id = cur.fetchone()[0]
-#             if max_id is None:
-#                 max_id = 0
-
-#             new_marking_id = max_id + 1  # 生成新的marking ID
-
-#             # 执行数据库操作，插入新的marking记录并使用新生成的marking ID和check值
-#             cur.execute("INSERT INTO markings (id, target, marking_check) VALUES (%s, %s, %s)", (new_marking_id, target, check))
-
-#             con.commit()  # 提交事务
-#             return jsonify({'message': '打刻目標登録成功！', 'marking_id': new_marking_id})  # 返回成功响应
-#         except pg.Error as e:
-#             print(f"データベース操作失败：{e}")
-#             con.rollback()  # 回滚事务
-#             return jsonify({'error': 'データベースエラーが発生しました。もう一度やり直してください。'}), 500  # 返回数据库错误响应
-#         finally:
-#             cur.close()  # 关闭游标
-#             con.close()  # 关闭数据库连接
-#     else:
-#         return jsonify({'error': 'データベースに接続できませんでした。'}), 500  # 返回数据库连接错误响应
 
 def reset_check_value():
     con, cur = connect_to_database()
